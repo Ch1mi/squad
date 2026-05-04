@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&amp;family=Inter:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#474746",
+                        "surface-container-highest": "#353534",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "surface-container": "#201f1f",
+                        "on-primary-container": "#556d00",
+                        "surface": "#131313",
+                        "primary": "#ffffff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary": "#c8c6c5",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed": "#e4e2e1",
+                        "on-tertiary-container": "#656464",
+                        "surface-tint": "#abd600",
+                        "on-secondary": "#313030",
+                        "on-primary-fixed": "#161e00",
+                        "tertiary": "#ffffff",
+                        "outline": "#8e9379",
+                        "surface-dim": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "primary-container": "#c3f400",
+                        "primary-fixed": "#c3f400",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-surface-variant": "#c4c9ac",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353534",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#313030",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "primary-fixed-dim": "#abd600",
+                        "tertiary-container": "#e4e2e1",
+                        "background": "#0F0F0F",
+                        "on-surface": "#e5e2e1",
+                        "on-primary": "#283500",
+                        "on-tertiary": "#303030",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-bright": "#3a3939",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "inverse-primary": "#506600",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "outline-variant": "#444933"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "gutter": "24px",
+                        "margin": "32px",
+                        "container-max": "1440px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Lexend"],
+                        "headline-lg": ["Lexend"],
+                        "label-caps": ["Space Grotesk"],
+                        "headline-xl": ["Lexend"],
+                        "data-display": ["Space Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-display": ["40px", { "lineHeight": "1.0", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0F0F0F;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .bento-card {
+            background-color: #1A1A1A;
+            border: 1px solid #2E2E2E;
+            transition: border-color 0.3s ease;
+        }
+
+        .bento-card:hover {
+            border-color: #c3f400;
+        }
+
+        .progress-track {
+            background-color: #2E2E2E;
+        }
+
+        .progress-fill {
+            background-color: #c3f400;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+    <main class="max-w-[1440px] mx-auto min-h-screen px-margin py-stack-lg flex flex-col gap-stack-lg">
+        <!-- Header Section -->
+        <header class="flex flex-col gap-stack-sm mb-stack-md">
+            <h1 class="font-headline-xl text-headline-xl text-primary tracking-tighter uppercase">Squad Dashboard</h1>
+        </header>
+        <!-- SQUAD GRID: Member Cards -->
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <!-- Member Card: Emi -->
+                <div class="bento-card p-stack-md flex flex-col items-center text-center gap-stack-md rounded-xl">
+                    <div
+                        class="w-24 h-24 flex items-center justify-center bg-surface-container rounded-full border-2 border-outline-variant">
+                        <img alt="Emi's Achievement Badge" class="w-24 h-24 object-contain" src="2.jpeg" />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h3 class="font-headline-md text-headline-md text-primary">Emi</h3>
+                        <p class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Agility lead</p>
+                    </div>
+                    <div
+                        class="w-full h-[2px] bg-gradient-to-r from-transparent via-primary-fixed-dim/30 to-transparent my-stack-sm">
+                    </div>
+                    <div class="flex gap-stack-sm">
+                    </div>
+                </div>
+                <!-- Member Card: Flor -->
+                <div class="bento-card p-stack-md flex flex-col items-center text-center gap-stack-md rounded-xl">
+                    <div
+                        class="w-24 h-24 flex items-center justify-center bg-surface-container rounded-full border-2 border-outline-variant">
+                        <img alt="Flor's Achievement Badge" class="w-24 h-24 object-contain" src="1.png" />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h3 class="font-headline-md text-headline-md text-primary">Flor</h3>
+                        <p class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Elite striker</p>
+                    </div>
+                    <div
+                        class="w-full h-[2px] bg-gradient-to-r from-transparent via-primary-fixed-dim/30 to-transparent my-stack-sm">
+                    </div>
+                    <div class="flex gap-stack-sm">
+                    </div>
+                </div>
+                <!-- Member Card: Sil -->
+                <div class="bento-card p-stack-md flex flex-col items-center text-center gap-stack-md rounded-xl">
+                    <div
+                        class="w-24 h-24 flex items-center justify-center bg-surface-container rounded-full border-2 border-outline-variant">
+                        <img alt="Sil's Achievement Badge" class="w-24 h-24 object-contain" src="3.jpeg" />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h3 class="font-headline-md text-headline-md text-primary">Sil</h3>
+                        <p class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Power specialist</p>
+                    </div>
+                    <div
+                        class="w-full h-[2px] bg-gradient-to-r from-transparent via-primary-fixed-dim/30 to-transparent my-stack-sm">
+                    </div>
+                    <div class="flex gap-stack-sm">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SQUAD MILESTONES: Progress Tracking -->
+        <section class="flex flex-col gap-stack-md">
+            <div class="flex items-center justify-between">
+                <h2 class="font-headline-lg text-headline-lg text-primary">Monthly Milestones</h2>
+                <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">May</span>
+            </div>
+            <div class="grid grid-cols-1 gap-stack-sm">
+                <!-- Milestone 1 -->
+                <div
+                    class="bento-card p-stack-md rounded-lg flex flex-col gap-stack-sm border-l-4 border-l-primary-container">
+                    <div class="flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Target
+                                A</span>
+                            <span class="font-body-lg font-bold text-primary">Attendance</span>
+                        </div>
+                        <span class="font-data-display text-headline-md text-primary-container">3 / 12</span>
+                    </div>
+                    <div class="progress-track w-full h-2 rounded-full overflow-hidden">
+                        <div class="progress-fill h-full w-[25%]"></div>
+                    </div>
+                    <div class="flex justify-between font-label-caps text-[10px] text-on-secondary-container uppercase">
+                    </div>
+                </div>
+                <!-- Milestone 2 -->
+                <div class="bento-card p-stack-md rounded-lg flex flex-col gap-stack-sm">
+                    <div class="flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Target
+                                B</span>
+                            <span class="font-body-lg font-bold text-primary">Strenght</span>
+                        </div>
+                        <span class="font-data-display text-headline-md text-primary-container">100%</span>
+                    </div>
+                    <div class="progress-track w-full h-2 rounded-full overflow-hidden">
+                        <div class="progress-fill h-full w-[33%]"></div>
+                    </div>
+                    <div class="flex justify-between font-label-caps text-[10px] text-on-secondary-container uppercase">
+                    </div>
+                </div>
+                <!-- Milestone 3 -->
+                <div class="bento-card p-stack-md rounded-lg flex flex-col gap-stack-sm">
+                    <div class="flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Target
+                                C</span>
+                            <span class="font-body-lg font-bold text-primary">Agilityt/Flexibility</span>
+                        </div>
+                        <span class="font-data-display text-headline-md text-primary-container">100%</span>
+                    </div>
+                    <div class="progress-track w-full h-2 rounded-full overflow-hidden">
+                        <div class="progress-fill h-full w-[33%]"></div>
+                    </div>
+                    <div class="flex justify-between font-label-caps text-[10px] text-on-secondary-container uppercase">
+                    </div>
+                </div>
+                <!-- Milestone 4 -->
+                <div class="bento-card p-stack-md rounded-lg flex flex-col gap-stack-sm">
+                    <div class="flex justify-between items-end">
+                        <div class="flex flex-col">
+                            <span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Target
+                                D</span>
+                            <span class="font-body-lg font-bold text-primary">Endurance</span>
+                        </div>
+                        <span class="font-data-display text-headline-md text-primary-container">100%</span>
+                    </div>
+                    <div class="progress-track w-full h-2 rounded-full overflow-hidden">
+                        <div class="progress-fill h-full w-[0%]"></div>
+                    </div>
+                    <div class="flex justify-between font-label-caps text-[10px] text-on-secondary-container uppercase">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer / Technical Data -->
+        <footer
+            class="mt-auto pt-stack-lg border-t border-surface-variant flex justify-between items-center opacity-50">
+            <div
+                class="flex gap-stack-md font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant">
+            </div>
+            <div class="flex gap-stack-sm items-center">
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

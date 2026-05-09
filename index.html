@@ -1,20 +1,11 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&amp;family=Inter:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -112,25 +103,20 @@
             color: #e5e2e1;
             -webkit-font-smoothing: antialiased;
         }
-
         .bento-card {
             background-color: #1A1A1A;
             border: 1px solid #2E2E2E;
             transition: border-color 0.3s ease;
         }
-
         .bento-card:hover {
             border-color: #c3f400;
         }
-
         .progress-track {
             background-color: #2E2E2E;
         }
-
         .progress-fill {
             background-color: #c3f400;
         }
-
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -142,186 +128,196 @@
             background: #2E2E2E;
             border-radius: 10px;
         }
+        /* Custom scrollbar for main */
+        .main-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .main-scroll::-webkit-scrollbar-thumb {
+            background: #2E2E2E;
+            border-radius: 10px;
+        }
     </style>
 </head>
-<body class="font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container flex overflow-hidden">
-<!-- COLLAPSIBLE SIDEBAR -->
-<aside class="w-16 hover:w-64 transition-all duration-300 ease-in-out h-screen bg-surface-container-lowest border-r border-surface-variant flex flex-col z-50 group" id="sidebar">
-<div class="p-stack-md flex items-center justify-center group-hover:justify-start gap-4">
-<span class="material-symbols-outlined text-primary-container">menu</span>
-<span class="font-label-caps text-label-caps text-primary opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Navigation</span>
-</div>
-<div class="flex-1 overflow-y-auto sidebar-scroll">
-<!-- Main Sidebar Content -->
-<div class="p-stack-md flex flex-col gap-stack-lg">
-<!-- Option: Milestones -->
-<div class="flex flex-col gap-stack-sm">
-<div class="flex items-center justify-center group-hover:justify-start gap-4 text-primary-container">
-<span class="material-symbols-outlined">analytics</span>
-<span class="font-headline-md text-body-md font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Milestones</span>
-</div>
-<!-- Expanded Content (only visible on hover/expand) -->
-<div class="hidden group-hover:flex flex-col gap-stack-md mt-stack-md border-l border-surface-variant pl-4 ml-3">
-<div class="flex flex-col gap-1">
-<label class="font-label-caps text-[10px] text-on-surface-variant uppercase">Target A</label>
-<input class="bg-surface-container border-none text-xs p-2 rounded focus:ring-1 focus:ring-primary-container text-on-surface" placeholder="Value..." type="text"/>
-</div>
-<div class="flex flex-col gap-1">
-<label class="font-label-caps text-[10px] text-on-surface-variant uppercase">Target B</label>
-<input class="bg-surface-container border-none text-xs p-2 rounded focus:ring-1 focus:ring-primary-container text-on-surface" placeholder="Value..." type="text"/>
-</div>
-<div class="flex flex-col gap-1">
-<label class="font-label-caps text-[10px] text-on-surface-variant uppercase">Target C</label>
-<input class="bg-surface-container border-none text-xs p-2 rounded focus:ring-1 focus:ring-primary-container text-on-surface" placeholder="Value..." type="text"/>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Log Workout Button -->
-<div class="p-stack-md mt-auto hidden group-hover:block">
-<button class="w-full py-stack-sm bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase rounded-lg hover:brightness-110 transition-all">
-            Log Workout
-        </button>
-</div>
-<div class="p-stack-md mt-auto flex justify-center group-hover:hidden">
-<span class="material-symbols-outlined text-primary-container">add_circle</span>
-</div>
-</aside>
-<main class="flex-1 overflow-y-auto max-w-[1440px] mx-auto min-h-screen px-margin py-stack-lg flex flex-col gap-stack-lg">
 
-<!-- Header Section -->
-<header class="flex flex-col gap-stack-sm mb-stack-md">
-<h1 class="font-headline-xl text-headline-xl text-primary tracking-tighter uppercase">SquadSync</h1>
-<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-[0.2em]">Operational Dashboard // Performance Protocol</p>
-</header>
-        <!-- SQUAD GRID: Member Cards -->
-        <section>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-                <!-- Member Card: Emi -->
-                <div class="bento-card p-stack-md flex flex-col items-center text-center gap-stack-md rounded-xl">
-                    <div
-                        class="w-24 h-24 flex items-center justify-center bg-surface-container rounded-full border-2 border-outline-variant">
-                        <img alt="Emi's Achievement Badge" class="w-24 h-24 object-contain" src="2.jpeg" />
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <h3 class="font-headline-md text-headline-md text-primary">Emi</h3>
-                        <p class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Agility lead</p>
-                    </div>
-                    <div
-                        class="w-full h-[2px] bg-gradient-to-r from-transparent via-primary-fixed-dim/30 to-transparent my-stack-sm">
-                    </div>
-                    <div class="flex gap-stack-sm">
-                    </div>
-                </div>
-                <!-- Member Card: Flor -->
-                <div class="bento-card p-stack-md flex flex-col items-center text-center gap-stack-md rounded-xl">
-                    <div
-                        class="w-24 h-24 flex items-center justify-center bg-surface-container rounded-full border-2 border-outline-variant">
-                        <img alt="Flor's Achievement Badge" class="w-24 h-24 object-contain" src="1.png" />
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <h3 class="font-headline-md text-headline-md text-primary">Flor</h3>
-                        <p class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Elite striker</p>
-                    </div>
-                    <div
-                        class="w-full h-[2px] bg-gradient-to-r from-transparent via-primary-fixed-dim/30 to-transparent my-stack-sm">
-                    </div>
-                    <div class="flex gap-stack-sm">
-                    </div>
-                </div>
-                <!-- Member Card: Sil -->
-                <div class="bento-card p-stack-md flex flex-col items-center text-center gap-stack-md rounded-xl">
-                    <div
-                        class="w-24 h-24 flex items-center justify-center bg-surface-container rounded-full border-2 border-outline-variant">
-                        <img alt="Sil's Achievement Badge" class="w-24 h-24 object-contain" src="3.jpeg" />
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <h3 class="font-headline-md text-headline-md text-primary">Sil</h3>
-                        <p class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Power specialist</p>
-                    </div>
-                    <div
-                        class="w-full h-[2px] bg-gradient-to-r from-transparent via-primary-fixed-dim/30 to-transparent my-stack-sm">
-                    </div>
-                    <div class="flex gap-stack-sm">
-                    </div>
-                </div>
+<!--
+    FIX: El body ya no tiene overflow-hidden ni flex directo.
+    Se agrega un wrapper .layout que es el que contiene sidebar + main
+    con h-screen overflow-hidden y flex. El main tiene overflow-y-auto
+    para scrollear su contenido internamente.
+    En móvil, el sidebar se oculta y el main ocupa todo el ancho.
+-->
+<body class="font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+
+    <!-- LAYOUT WRAPPER: contiene sidebar + main, fija la altura a la pantalla -->
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- COLLAPSIBLE SIDEBAR -->
+        <aside
+            class="hidden md:flex w-16 hover:w-64 transition-all duration-300 ease-in-out h-full bg-surface-container-lowest border-r border-surface-variant flex-col z-50 group flex-shrink-0"
+            id="sidebar">
+            <div class="p-stack-md flex items-center justify-center group-hover:justify-start gap-4">
+                <span class="material-symbols-outlined text-primary-container">menu</span>
+                <span class="font-label-caps text-label-caps text-primary opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Menu</span>
             </div>
-        </section>
-        <!-- SQUAD MILESTONES: Progress Tracking -->
-        <section class="flex flex-col gap-stack-md">
-            <div class="flex items-center justify-between">
-                <h2 class="font-headline-lg text-headline-lg text-primary">Monthly Milestones</h2>
-                <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">May</span>
-            </div>
-            <div class="grid grid-cols-1 gap-stack-sm">
-                <!-- Milestone 1 -->
-                <div
-                    class="bento-card p-stack-md rounded-lg flex flex-col gap-stack-sm border-l-4 border-l-primary-container">
-                    <div class="flex justify-between items-end">
-                        <div class="flex flex-col">
-                            <span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Target
-                                A</span>
-                            <span class="font-body-lg font-bold text-primary">Attendance</span>
+            <div class="flex-1 overflow-y-auto sidebar-scroll">
+                <div class="p-stack-md flex flex-col gap-stack-lg">
+                    <!-- Option: Milestones -->
+                    <div class="flex flex-col gap-stack-sm">
+                        <div class="flex items-center justify-center group-hover:justify-start gap-4 text-primary-container">
+                            <span class="material-symbols-outlined">analytics</span>
+                            <span class="font-headline-md text-body-md font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Milestones</span>
                         </div>
-                        <span class="font-data-display text-headline-md text-primary-container">24</span>
-                    </div>
-                    <div class="progress-track w-full h-2 rounded-full overflow-hidden">
-                        <div class="progress-fill h-full w-[33%]"></div>
-                    </div>
-                    <div class="flex justify-between font-label-caps text-[10px] text-on-secondary-container uppercase">
-                    <span>8 Achieved</span>
-                    <span>≥2 session/week per member</span>
-                    </div>
-                </div>
-                <!-- Milestone 2 -->
-                <div class="bento-card p-stack-md rounded-lg flex flex-col gap-stack-sm">
-                    <div class="flex justify-between items-end">
-                        <div class="flex flex-col">
-                            <span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Target
-                                B</span>
-                            <span class="font-body-lg font-bold text-primary">Strenght/Endurance</span>
+                        <!-- Expanded Content -->
+                        <div class="hidden group-hover:flex flex-col gap-stack-md mt-stack-md border-l border-surface-variant pl-4 ml-3">
+                            <div class="flex flex-col gap-1">
+                                <label class="font-label-caps text-[10px] text-on-surface-variant uppercase">Target A</label>
+                                <input class="bg-surface-container border-none text-xs p-2 rounded focus:ring-1 focus:ring-primary-container text-on-surface" placeholder="Value..." type="text"/>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label class="font-label-caps text-[10px] text-on-surface-variant uppercase">Target B</label>
+                                <input class="bg-surface-container border-none text-xs p-2 rounded focus:ring-1 focus:ring-primary-container text-on-surface" placeholder="Value..." type="text"/>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label class="font-label-caps text-[10px] text-on-surface-variant uppercase">Target C</label>
+                                <input class="bg-surface-container border-none text-xs p-2 rounded focus:ring-1 focus:ring-primary-container text-on-surface" placeholder="Value..." type="text"/>
+                            </div>
                         </div>
-                        <span class="font-data-display text-headline-md text-primary-container">24</span>
-                    </div>
-                    <div class="progress-track w-full h-2 rounded-full overflow-hidden">
-                        <div class="progress-fill h-full w-[29%]"></div>
-                    </div>
-                    <div class="flex justify-between font-label-caps text-[10px] text-on-secondary-container uppercase">
-                    <span>7 Achieved</span>
-                    <span>≥8 session/week</span>
                     </div>
                 </div>
-                <!-- Milestone 3 -->
-                <div class="bento-card p-stack-md rounded-lg flex flex-col gap-stack-sm">
-                    <div class="flex justify-between items-end">
-                        <div class="flex flex-col">
-                            <span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Target
-                                C</span>
-                            <span class="font-body-lg font-bold text-primary">Agilityt/Flexibility</span>
+            </div>
+            <!-- Log Button -->
+            <div class="p-stack-md hidden group-hover:block">
+                <button class="w-full py-stack-sm bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase rounded-lg hover:brightness-110 transition-all">
+                    Log 
+                </button>
+            </div>
+            <div class="p-stack-md flex justify-center group-hover:hidden">
+                <span class="material-symbols-outlined text-primary-container">add_circle</span>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT: overflow-y-auto permite scroll interno -->
+        <main class="flex-1 overflow-y-auto main-scroll px-margin py-stack-lg flex flex-col gap-stack-lg">
+            <div class="max-w-[1440px] mx-auto w-full flex flex-col gap-stack-lg">
+
+                <!-- Header Section -->
+                <header class="flex flex-col gap-stack-sm mb-stack-md">
+                    <h1 class="font-headline-xl text-headline-xl text-primary tracking-tighter uppercase">Squad</h1>
+                    <p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-[0.2em]"></p>
+                </header>
+
+                <!-- SQUAD GRID: Member Cards -->
+                <section>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                        <!-- Member Card: Emi -->
+                        <div class="bento-card p-stack-md flex flex-col items-center text-center gap-stack-md rounded-xl">
+                            <div class="w-24 h-24 flex items-center justify-center bg-surface-container rounded-full border-2 border-outline-variant">
+                                <img alt="Emi's Achievement Badge" class="w-24 h-24 object-contain" src="2.jpeg" />
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="font-headline-md text-headline-md text-primary">Emi</h3>
+                                <p class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Agility lead</p>
+                            </div>
+                            <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-primary-fixed-dim/30 to-transparent my-stack-sm"></div>
+                            <div class="flex gap-stack-sm"></div>
                         </div>
-                        <span class="font-data-display text-headline-md text-primary-container">12</span>
+                        <!-- Member Card: Flor -->
+                        <div class="bento-card p-stack-md flex flex-col items-center text-center gap-stack-md rounded-xl">
+                            <div class="w-24 h-24 flex items-center justify-center bg-surface-container rounded-full border-2 border-outline-variant">
+                                <img alt="Flor's Achievement Badge" class="w-24 h-24 object-contain" src="1.png" />
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="font-headline-md text-headline-md text-primary">Flor</h3>
+                                <p class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Elite striker</p>
+                            </div>
+                            <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-primary-fixed-dim/30 to-transparent my-stack-sm"></div>
+                            <div class="flex gap-stack-sm"></div>
+                        </div>
+                        <!-- Member Card: Sil -->
+                        <div class="bento-card p-stack-md flex flex-col items-center text-center gap-stack-md rounded-xl">
+                            <div class="w-24 h-24 flex items-center justify-center bg-surface-container rounded-full border-2 border-outline-variant">
+                                <img alt="Sil's Achievement Badge" class="w-24 h-24 object-contain" src="3.jpeg" />
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="font-headline-md text-headline-md text-primary">Sil</h3>
+                                <p class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Power specialist</p>
+                            </div>
+                            <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-primary-fixed-dim/30 to-transparent my-stack-sm"></div>
+                            <div class="flex gap-stack-sm"></div>
+                        </div>
                     </div>
-                    <div class="progress-track w-full h-2 rounded-full overflow-hidden">
-                        <div class="progress-fill h-full w-[33%]"></div>
+                </section>
+
+                <!-- SQUAD MILESTONES: Progress Tracking -->
+                <section class="flex flex-col gap-stack-md">
+                    <div class="flex items-center justify-between">
+                        <h2 class="font-headline-lg text-headline-lg text-primary">Monthly Milestones</h2>
+                        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">May</span>
                     </div>
-                    <div class="flex justify-between font-label-caps text-[10px] text-on-secondary-container uppercase">
-                    <span>4 Achieved</span>
-                    <span>≥3 session/week</span>
+                    <div class="grid grid-cols-1 gap-stack-sm">
+                        <!-- Milestone 1 -->
+                        <div class="bento-card p-stack-md rounded-lg flex flex-col gap-stack-sm border-l-4 border-l-primary-container">
+                            <div class="flex justify-between items-end">
+                                <div class="flex flex-col">
+                                    <span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Target A</span>
+                                    <span class="font-body-lg font-bold text-primary">Attendance</span>
+                                </div>
+                                <span class="font-data-display text-headline-md text-primary-container">33%</span>
+                            </div>
+                            <div class="progress-track w-full h-2 rounded-full overflow-hidden">
+                                <div class="progress-fill h-full w-[33%]"></div>
+                            </div>
+                            <div class="flex justify-between font-label-caps text-[10px] text-on-secondary-container uppercase">
+                                <span>8 Achieved</span>
+                                <span>24</span>  <!-- ≥2 session/week per member -->
+                            </div>
+                        </div>
+                        <!-- Milestone 2 -->
+                        <div class="bento-card p-stack-md rounded-lg flex flex-col gap-stack-sm">
+                            <div class="flex justify-between items-end">
+                                <div class="flex flex-col">
+                                    <span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Target B</span>
+                                    <span class="font-body-lg font-bold text-primary">Strenght/Endurance</span>
+                                </div>
+                                <span class="font-data-display text-headline-md text-primary-container">29%</span> 
+                            </div>
+                            <div class="progress-track w-full h-2 rounded-full overflow-hidden">
+                                <div class="progress-fill h-full w-[29%]"></div>
+                            </div>
+                            <div class="flex justify-between font-label-caps text-[10px] text-on-secondary-container uppercase">
+                                <span>7 Achieved</span>
+                                <span>24</span> <!-- ≥8 session/week  -->
+                            </div>
+                        </div>
+                        <!-- Milestone 3 -->
+                        <div class="bento-card p-stack-md rounded-lg flex flex-col gap-stack-sm">
+                            <div class="flex justify-between items-end">
+                                <div class="flex flex-col">
+                                    <span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase">Target C</span>
+                                    <span class="font-body-lg font-bold text-primary">Agility/Flexibility</span>
+                                </div>
+                                <span class="font-data-display text-headline-md text-primary-container">33%</span>
+                            </div>
+                            <div class="progress-track w-full h-2 rounded-full overflow-hidden">
+                                <div class="progress-fill h-full w-[33%]"></div>
+                            </div>
+                            <div class="flex justify-between font-label-caps text-[10px] text-on-secondary-container uppercase">
+                                <span>4 Achieved</span>
+                                <span>12</span> <!-- ≥3 session/week  -->
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="mt-auto pt-stack-lg border-t border-surface-variant flex justify-between items-center opacity-50">
+                    <div class="flex gap-stack-md font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant"></div>
+                    <div class="flex gap-stack-sm items-center"></div>
+                </footer>
+
             </div>
-        </section>
-        <!-- Footer / Technical Data -->
-        <footer
-            class="mt-auto pt-stack-lg border-t border-surface-variant flex justify-between items-center opacity-50">
-            <div
-                class="flex gap-stack-md font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant">
-            </div>
-            <div class="flex gap-stack-sm items-center">
-            </div>
-        </footer>
-    </main>
+        </main>
+    </div>
+
 </body>
-
 </html>
